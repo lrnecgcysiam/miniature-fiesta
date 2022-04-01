@@ -1,0 +1,53 @@
+./[id].js:10:    const { data } = await supabase
+./[id].js-11-        .from("premium_content")
+./[id].js-12-        .select("video_url")
+./[id].js-13-        .eq("id", lessons.id)
+./[id].js-14-        .single();
+./[id].js-15-    setVideoUrl(data?.video_url)
+./[id].js-16-  }
+./[id].js-17-
+./[id].js-18-    // We will call our premiumContent function
+./[id].js-19-    // when our component first mounts
+--
+./[id].js:35:  const { data: lessons } = await supabase.from("lessons").select("id");
+./[id].js-36-
+./[id].js-37-  const paths = lessons.map(({ id }) => ({
+./[id].js-38-    params: {
+./[id].js-39-      id: id.toString(),
+./[id].js-40-    },
+./[id].js-41-  }));
+./[id].js-42-
+./[id].js-43-  return {
+./[id].js-44-    paths,
+--
+./[id].js:51:    const { data: lessons } = await supabase
+./[id].js-52-    .from("lessons")
+./[id].js-53-    .select("*")
+./[id].js-54-    .eq("id", id)
+./[id].js-55-    .single();
+./[id].js-56-  
+./[id].js-57-    return {
+./[id].js-58-      props: {
+./[id].js-59-        lessons,
+./[id].js-60-      },
+--
+./index.js:22:  const { data: lessons } = await supabase.from("lessons").select("*");
+./index.js-23-
+./index.js-24-  return {
+./index.js-25-    props: {
+./index.js-26-      lessons,
+./index.js-27-    },
+./index.js-28-  };
+./index.js-29-};
+./index.js-30-
+--
+./api/create-stripe-customer.js:17:  await supabase
+./api/create-stripe-customer.js-18-    .from("profiles")
+./api/create-stripe-customer.js-19-    .update({
+./api/create-stripe-customer.js-20-      stripe_customer: customer.id,
+./api/create-stripe-customer.js-21-    })
+./api/create-stripe-customer.js-22-    .eq("id", req.body.record.id);
+./api/create-stripe-customer.js-23-
+./api/create-stripe-customer.js-24-  res.send({ message: `stripe customer created: ${customer.id}` });
+./api/create-stripe-customer.js-25-};
+./api/create-stripe-customer.js-26-

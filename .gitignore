@@ -1,0 +1,9 @@
+node_modules
+.env-local
+.triggers
+.functions
+.function_hooks
+profiles.*
+.create-table
+.env 
+.next/

@@ -1,0 +1,13 @@
+# Add a new function
+
+name of function: create_profile_for_user
+schema: public
+return: trigger 
+
+-- Definition
+begin
+    insert into public.profiles(id)
+    values(new.id);
+
+    return new;
+end;

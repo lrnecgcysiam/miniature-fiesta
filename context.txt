@@ -1,0 +1,27 @@
+context/user.js:16:        const { data: profile } = await supabase
+context/user.js-17-          .from("profile")
+context/user.js-18-          .select("*")
+context/user.js-19-          .eq("id", sessionUser.id)
+context/user.js-20-          .single();
+context/user.js-21-
+context/user.js-22-        setUser({
+context/user.js-23-          ...sessionUser,
+context/user.js-24-          ...profile,
+context/user.js-25-        });
+--
+context/user.js:37:    await supabase.auth.signIn({
+context/user.js-38-      provider: "github",
+context/user.js-39-    });
+context/user.js-40-  };
+context/user.js-41-
+context/user.js-42-  const logout = async () => {
+context/user.js:43:    await supabase.auth.signOut();
+context/user.js-44-    setUser(null);
+context/user.js-45-    router.push("/");
+context/user.js-46-  };
+context/user.js-47-
+context/user.js-48-  const exposed = {
+context/user.js-49-    user,
+context/user.js-50-    login,
+context/user.js-51-    logout,
+context/user.js-52-  };
