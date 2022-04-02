@@ -7,7 +7,7 @@ import  {useUser} from '../context/user'
 
 export default function Home({ lessons }) {
   const { user } = useUser();
-  console.log({user});
+  console.log(`LESSONS`,{lessons});
 
   console.log(supabase.auth.user());
   return (
@@ -15,9 +15,9 @@ export default function Home({ lessons }) {
    {lessons.map((lesson) => (
         <Link key={lesson.id} href={`/${lesson.id}`}>
           <a className="p-8 h-40 mb-4 rounded shadow text-xl flex">
-            {lesson.titles}
+             {lesson.title}
           </a>
-        </Link>
+         </Link>
          ))}
     </div>
   );
