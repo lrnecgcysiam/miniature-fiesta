@@ -1,9 +1,7 @@
 import 'tailwindcss/tailwind.css'
-import userProvider from '../context/user'
+import UserProvider from '../context/user'
 
 function MyApp({ Component, pageProps }) {
-
-
 
     return (
      <UserProvider>
