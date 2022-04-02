@@ -14,7 +14,7 @@ const Provider = ({ children }) => {
 
       if (sessionUser) {
         const { data: profiles } = await supabase
-          .from("profiles")
+          .from("profile")
           .select("*")
           .eq("id", sessionUser.id)
           .single();
